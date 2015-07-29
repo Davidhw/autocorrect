@@ -1,9 +1,5 @@
 David Weinstein
 
-Uncompleted Parts of the Assignment:
-I haven't implemented a gui yet.
-My commenting and testing is not extensive (I did them as needed rather than as ideal).
-
 Known bugs:
 When I use genesis as the corpus, I can't get Gomorrah back as a correction. I'm not sure what the bug behind that problem is.
 
