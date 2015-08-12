@@ -32,16 +32,9 @@ What your smart suggestion does and how it improves our current suggestion:
 My smart ordering is simply picking a correction with a Levenshtein distance of 1. If there isn't one, I used the normal process. A better solution would be to use Damerau–Levenshtein distance so that a transposition only contributes a distance of 1 rather than a distance of 2.
 
 
-
-Design Question 1:
-How would you change your frontend/backend code so that you could handle autocorrecting multiple input fields on the same page? Would you need to make any changes?
-
-I haven't written by frontend yet, but I don't see why I'd have to change the backend at all. 
-
-
-Design Question 2:
+Design Question:
 Suppose some new letter, θ, has been introduced into the English alphabet. This letter can be appended to the end of any English word, to negate it. For example, badθ would mean “good". One effect of this 1984-esque enhanced vocabulary is that you will now need to store twice as many words in your trie as before. How many more nodes will you need to store in your trie? Support your answer with details about how your trie is implemented and what data it stores.
 
 The trie is implemented such that each letter is its own trie. For example, inputing the word "test" would requiring inputing four tries (assuming no relevant tries had already been inserted). To input "testθ" would require one additional trie. 
-To store all the new words, I couldn't just add one new Trie that all the words point to becasue each of my tries stores their parent. As such, I would need on new trie per word (note that that is different from per letter).
+To store all the new words, I couldn't just add one new Trie that all the words point to because each of my tries stores their parent. As such, I would need one new trie per word (note that that is different from per letter).
 
